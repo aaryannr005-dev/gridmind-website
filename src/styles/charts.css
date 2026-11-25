@@ -372,6 +372,10 @@
   stroke: rgba(148, 163, 184, 0.18);
 }
 
+.net-hub-core {
+  fill: var(--network-hub);
+}
+
 .net-card-title {
   fill: var(--text);
   font-size: 10px;
