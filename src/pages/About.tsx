@@ -25,21 +25,33 @@ const objectives = [
   },
 ];
 
-const teamSlots = [
-  { label: 'Team name', value: 'To be confirmed', note: 'Competition entry name' },
-  { label: 'Team members', value: 'To be confirmed', note: 'Names and roles' },
-  { label: 'Supervisor', value: 'To be confirmed', note: 'Academic supervisor' },
-  {
-    label: 'Competition',
-    value: 'UTM competition',
-    note: 'Full competition name and category to be added',
-  },
+const projectDetails = [
+  { label: 'Project', value: 'GridMind', note: 'Community energy optimisation prototype' },
   {
     label: 'Institution',
     value: 'Universiti Teknologi Malaysia',
-    note: 'Faculty / school to be added',
+    note: 'Student engineering project',
   },
-  { label: 'Contact', value: 'To be added', note: 'Official project contact' },
+  {
+    label: 'Technology',
+    value: 'React + TypeScript + Vite',
+    note: 'Responsive web dashboard',
+  },
+  {
+    label: 'Model scope',
+    value: 'Solar · load · battery · grid',
+    note: 'Community-scale energy assets',
+  },
+  {
+    label: 'Simulation',
+    value: 'Deterministic, 15-minute data',
+    note: '24 h · 7 d · 30 d analysis horizons',
+  },
+  {
+    label: 'Status',
+    value: 'Prototype demonstration',
+    note: 'No live grid or hardware control',
+  },
 ];
 
 export function About() {
@@ -283,17 +295,17 @@ export function About() {
         <div className="container">
           <Reveal>
             <SectionHead
-              eyebrow="Team & competition"
-              title="Project details."
-              lead="Team and competition information will be completed as it is confirmed. The fields below are deliberate placeholders, not published facts."
-              meta={<span className="mono-tag">placeholder</span>}
+              eyebrow="Project profile"
+              title="A clear snapshot of what GridMind is today."
+              lead="GridMind is a student engineering prototype from Universiti Teknologi Malaysia. It models community-scale solar, demand, battery storage and grid exchange in a labelled simulation, then visualises the results through a React dashboard."
+              meta={<span className="mono-tag">current build</span>}
             />
           </Reveal>
 
           <div className="team-grid">
-            {teamSlots.map((slot, index) => (
+            {projectDetails.map((slot, index) => (
               <Reveal key={slot.label} delay={index * 40}>
-                <div className={`team-card${slot.value === 'To be confirmed' || slot.value === 'To be added' ? ' team-card--placeholder' : ''}`}>
+                <div className="team-card">
                   <span className="team-label">{slot.label}</span>
                   <span className="team-value">{slot.value}</span>
                   <span className="team-note">{slot.note}</span>
@@ -303,8 +315,8 @@ export function About() {
           </div>
 
           <p className="section-footnote">
-            <span aria-hidden="true">↳</span> No contact links are published until an
-            official project address is provided.
+            <span aria-hidden="true">↳</span> Team names, supervisor details and the
+            official competition category are not published in the current repository.
           </p>
 
           <div className="inline-cta">
