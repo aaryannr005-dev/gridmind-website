@@ -1,8 +1,9 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { Logo } from '../ui/Primitives';
 import { Icon } from '../ui/Icon';
-import { useState } from 'react';
+
+type Theme = 'dark' | 'light';
 
 const links = [
   { to: '/', label: 'Home' },
@@ -17,6 +18,12 @@ export function Nav() {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === 'undefined') return 'dark';
+    const saved = window.localStorage.getItem('gridmind-theme');
+    if (saved === 'light' || saved === 'dark') return saved;
+    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+  });
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -24,6 +31,11 @@ export function Nav() {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    window.localStorage.setItem('gridmind-theme', theme);
+  }, [theme]);
 
   useEffect(() => {
     setOpen(false);
@@ -56,10 +68,16 @@ export function Nav() {
         </nav>
 
         <div className="nav-actions">
-          <span className="nav-status">
-            <span className="status-dot" aria-hidden="true" />
-            Simulation online
-          </span>
+          <button
+            type="button"
+            className="theme-toggle"
+            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+            aria-pressed={theme === 'light'}
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          >
+            <Icon name={theme === 'dark' ? 'sun' : 'moon'} size={15} />
+            <span className="theme-toggle-label">{theme === 'dark' ? 'Light' : 'Dark'}</span>
+          </button>
           <Link to="/dashboard" className="btn btn--primary btn--sm nav-cta">
             <span>Open dashboard</span>
           </Link>
