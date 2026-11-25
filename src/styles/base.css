@@ -1,13 +1,32 @@
 :root {
+  color-scheme: dark;
   --bg: #05070d;
   --bg-deep: #04060b;
   --surface: rgba(13, 20, 31, 0.72);
   --surface-soft: rgba(15, 23, 35, 0.48);
-  --line: rgba(148, 163, 184, 0.13);
-  --line-strong: rgba(148, 163, 184, 0.24);
-  --text: #e9eef7;
-  --muted: #94a4b9;
-  --dim: #6b7c92;
+  --surface-solid: #0a1019;
+  --surface-strong: rgba(8, 13, 21, 0.96);
+  --surface-panel: rgba(10, 16, 25, 0.48);
+  --surface-subtle: rgba(255, 255, 255, 0.02);
+  --network-bg: rgba(7, 12, 19, 0.58);
+  --nav-bg: rgba(5, 7, 13, 0.64);
+  --nav-bg-scrolled: rgba(5, 7, 13, 0.84);
+  --bg-image: none;
+  --hero-glow: none;
+  --cta-bg: transparent;
+  --grid-line: rgba(148, 163, 184, 0.055);
+  --scroll-track: var(--bg-deep);
+  --scroll-thumb: #1b2637;
+  --selection-bg: rgba(53, 240, 164, 0.24);
+  --selection-text: #f2fffa;
+  --button-text: #04140e;
+  --shadow: rgba(0, 0, 0, 0.35);
+  --green-strong: #8cf2c8;
+  --cyan-strong: #8eeefa;
+  --blue-strong: #a9c5ff;
+  --amber-strong: #f7d17a;
+  --green-muted: #83cbb0;
+  --amber-muted: #cdb77f;
   --green: #35f0a4;
   --green-deep: #16c98a;
   --cyan: #22d3ee;
@@ -21,6 +40,49 @@
   --max: 1240px;
   --radius: 14px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f6f8fb;
+  --bg-deep: #e9eef5;
+  --surface: rgba(255, 255, 255, 0.82);
+  --surface-soft: rgba(255, 255, 255, 0.68);
+  --surface-solid: #ffffff;
+  --surface-strong: rgba(255, 255, 255, 0.96);
+  --surface-panel: rgba(255, 255, 255, 0.78);
+  --surface-subtle: rgba(15, 23, 42, 0.04);
+  --network-bg: rgba(255, 255, 255, 0.88);
+  --nav-bg: rgba(246, 248, 251, 0.78);
+  --nav-bg-scrolled: rgba(246, 248, 251, 0.93);
+  --bg-image: none;
+  --hero-glow: none;
+  --cta-bg: transparent;
+  --grid-line: rgba(15, 23, 42, 0.07);
+  --scroll-track: #e9eef5;
+  --scroll-thumb: #b6c1d1;
+  --selection-bg: rgba(19, 122, 90, 0.18);
+  --selection-text: #10251d;
+  --button-text: #f2fffa;
+  --shadow: rgba(15, 23, 42, 0.12);
+  --green-strong: #0c6f50;
+  --cyan-strong: #0b6979;
+  --blue-strong: #315a9d;
+  --amber-strong: #8a5a06;
+  --green-muted: #317662;
+  --amber-muted: #896e30;
+  --text: #142033;
+  --muted: #526176;
+  --dim: #718096;
+  --line: rgba(15, 23, 42, 0.12);
+  --line-strong: rgba(15, 23, 42, 0.22);
+  --green: #137a5a;
+  --green-deep: #0b6348;
+  --cyan: #0f7284;
+  --blue: #3d66b2;
+  --amber: #a16207;
+  --violet: #6d5bd0;
+  --danger: #c2415b;
 }
 
 *,
@@ -41,9 +103,7 @@ html {
 body {
   min-height: 100vh;
   background-color: var(--bg);
-  background-image:
-    radial-gradient(1100px 620px at 78% -8%, rgba(34, 211, 238, 0.09), transparent 62%),
-    radial-gradient(900px 520px at 6% 4%, rgba(53, 240, 164, 0.055), transparent 60%);
+  background-image: var(--bg-image);
   background-repeat: no-repeat;
   color: var(--muted);
   font-family: var(--font-sans);
@@ -53,6 +113,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 body::before {
@@ -62,8 +123,8 @@ body::before {
   z-index: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(148, 163, 184, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, 0.055) 1px, transparent 1px);
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 76px 76px;
   -webkit-mask-image: radial-gradient(circle at 50% 8%, #000 0%, transparent 72%);
   mask-image: radial-gradient(circle at 50% 8%, #000 0%, transparent 72%);
@@ -133,8 +194,8 @@ ol {
 }
 
 ::selection {
-  background: rgba(53, 240, 164, 0.24);
-  color: #f2fffa;
+  background: var(--selection-bg);
+  color: var(--selection-text);
 }
 
 :focus-visible {
@@ -149,17 +210,17 @@ ol {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-deep);
+  background: var(--scroll-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1b2637;
-  border: 3px solid var(--bg-deep);
+  background: var(--scroll-thumb);
+  border: 3px solid var(--scroll-track);
   border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2a3b52;
+  background: var(--line-strong);
 }
 
 /* ---------- Shared utilities ---------- */
@@ -262,10 +323,7 @@ ol {
 }
 
 .grad-text {
-  background: linear-gradient(102deg, #f4fffa 4%, #5bf7bd 44%, #6fe8ff 96%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--green);
 }
 
 .section-head {
@@ -447,7 +505,7 @@ ol {
   border: 1px solid var(--line);
   border-radius: 12px;
   overflow-x: auto;
-  background: rgba(9, 14, 22, 0.5);
+  background: var(--surface-panel);
   margin-top: 22px;
 }
 
