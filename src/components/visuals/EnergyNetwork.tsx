@@ -114,7 +114,7 @@ export function EnergyNetwork() {
           ))}
 
           <g className="net-hub">
-            <circle cx="310" cy="270" r="76" fill="url(#net-hub-fill)" stroke="#35f0a4" strokeOpacity="0.36" />
+            <circle cx="310" cy="270" r="76" className="net-hub-core" stroke="#35f0a4" strokeOpacity="0.36" />
             <circle cx="310" cy="270" r="76" className="net-hub-pulse" />
             <path d="M310 194a76 76 0 0 1 65.8 38" className="net-hub-arc" />
             <path d="M310 346a76 76 0 0 1-65.8-38" className="net-hub-arc" />
