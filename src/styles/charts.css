@@ -180,7 +180,7 @@
 
 .compare-tag--gm,
 .compare-value--gm {
-  color: #8cf2c8;
+  color: var(--green-strong);
 }
 
 .compare-track,
