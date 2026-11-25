@@ -86,7 +86,7 @@
   pointer-events: none;
   border: 1px solid var(--line-strong);
   border-radius: 7px;
-  background: rgba(5, 7, 13, 0.94);
+  background: var(--surface-strong);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.28);
   transform: translateX(-50%);
 }
@@ -368,7 +368,7 @@
 }
 
 .net-card rect {
-  fill: rgba(8, 14, 22, 0.88);
+  fill: var(--surface-solid);
   stroke: rgba(148, 163, 184, 0.18);
 }
 
@@ -424,7 +424,7 @@
 
 .flow-node rect:first-child,
 .flow-hub > rect {
-  fill: rgba(8, 14, 22, 0.88);
+  fill: var(--surface-solid);
   stroke: rgba(148, 163, 184, 0.2);
 }
 
