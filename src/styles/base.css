@@ -4,6 +4,11 @@
   --bg-deep: #04060b;
   --surface: rgba(13, 20, 31, 0.72);
   --surface-soft: rgba(15, 23, 35, 0.48);
+  --text: #e9eef7;
+  --muted: #94a4b9;
+  --dim: #6b7c92;
+  --line: rgba(148, 163, 184, 0.13);
+  --line-strong: rgba(148, 163, 184, 0.24);
   --surface-solid: #0a1019;
   --surface-strong: rgba(8, 13, 21, 0.96);
   --surface-panel: rgba(10, 16, 25, 0.48);
