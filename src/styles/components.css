@@ -48,7 +48,7 @@
 .btn--ghost {
   color: var(--text);
   border-color: var(--line-strong);
-  background: rgba(255, 255, 255, 0.018);
+  background: var(--surface-subtle);
 }
 
 .btn--ghost:hover {
@@ -87,25 +87,25 @@
 
 .badge--green {
   border-color: rgba(53, 240, 164, 0.25);
-  color: #8cf2c8;
+  color: var(--green-strong);
   background: rgba(53, 240, 164, 0.06);
 }
 
 .badge--cyan {
   border-color: rgba(34, 211, 238, 0.25);
-  color: #8eeefa;
+  color: var(--cyan-strong);
   background: rgba(34, 211, 238, 0.06);
 }
 
 .badge--blue {
   border-color: rgba(75, 140, 255, 0.26);
-  color: #a9c5ff;
+  color: var(--blue-strong);
   background: rgba(75, 140, 255, 0.07);
 }
 
 .badge--amber {
   border-color: rgba(251, 191, 36, 0.25);
-  color: #f7d17a;
+  color: var(--amber-strong);
   background: rgba(251, 191, 36, 0.06);
 }
 
@@ -176,7 +176,7 @@
 
 .note--amber {
   border-color: rgba(251, 191, 36, 0.19);
-  color: #cdb77f;
+  color: var(--amber-muted);
   background: rgba(251, 191, 36, 0.04);
 }
 
@@ -196,7 +196,7 @@
   border: 1px solid var(--line);
   border-top: 2px solid var(--green);
   border-radius: 9px;
-  background: rgba(10, 16, 25, 0.48);
+  background: var(--surface-panel);
 }
 
 .kpi[data-tone='cyan'] {
@@ -298,7 +298,7 @@
   padding: 22px;
   border: 1px solid var(--line);
   border-radius: 11px;
-  background: rgba(10, 16, 25, 0.42);
+  background: var(--surface-panel);
 }
 
 .problem-index,
@@ -366,7 +366,7 @@
   padding: 24px;
   border: 1px solid var(--line);
   border-radius: 12px;
-  background: rgba(10, 16, 25, 0.48);
+  background: var(--surface-panel);
 }
 
 .preview-head,
@@ -406,7 +406,7 @@
   padding: 18px;
   border: 1px solid var(--line);
   border-radius: 10px;
-  background: rgba(10, 16, 25, 0.4);
+  background: var(--surface-panel);
 }
 
 .module-top {
@@ -434,7 +434,7 @@
   font-family: var(--font-mono);
   font-size: 9px !important;
   line-height: 1.5 !important;
-  color: #83cbb0 !important;
+  color: var(--green-muted) !important;
 }
 
 .io-label,
@@ -448,7 +448,7 @@
   padding: 22px;
   border: 1px solid var(--line);
   border-radius: 12px;
-  background: rgba(10, 16, 25, 0.42);
+  background: var(--surface-panel);
 }
 
 .arch-layer {
@@ -507,7 +507,7 @@
   padding: 20px 19px;
   border: 1px solid var(--line);
   border-right: none;
-  background: rgba(10, 16, 25, 0.4);
+  background: var(--surface-panel);
 }
 
 .pipeline-item:first-child .pipeline-step {
@@ -536,7 +536,7 @@
   border-top: 1px solid var(--line);
   font-family: var(--font-mono);
   font-size: 8.5px !important;
-  color: #83cbb0 !important;
+  color: var(--green-muted) !important;
 }
 
 .pipeline-arrow {
@@ -637,7 +637,7 @@
   padding: 0 10px;
   border: 1px solid var(--line);
   border-radius: 6px;
-  background: rgba(255, 255, 255, 0.02);
+  background: var(--surface-subtle);
   cursor: pointer;
   font-family: var(--font-mono);
   font-size: 9px;
@@ -655,7 +655,7 @@
   padding: 3px;
   border: 1px solid var(--line);
   border-radius: 7px;
-  background: rgba(255, 255, 255, 0.018);
+  background: var(--surface-subtle);
 }
 
 .segment {
@@ -677,7 +677,7 @@
 }
 
 .live-tag {
-  color: #8cf2c8;
+  color: var(--green-strong);
 }
 
 .summary-grid {
@@ -704,7 +704,7 @@
   padding: 24px;
   border: 1px solid var(--line);
   border-radius: 12px;
-  background: rgba(10, 16, 25, 0.46);
+  background: var(--surface-panel);
 }
 
 .objective-label {
@@ -753,7 +753,7 @@
   padding: 19px;
   border: 1px solid var(--line);
   border-radius: 10px;
-  background: rgba(10, 16, 25, 0.42);
+  background: var(--surface-panel);
 }
 
 .rule-condition {
@@ -779,7 +779,7 @@
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 12px;
-  background: rgba(10, 16, 25, 0.48);
+  background: var(--surface-panel);
 }
 
 .scenario-controls {
@@ -868,7 +868,7 @@
   border-radius: 5px;
   font-family: var(--font-mono);
   font-size: 9px;
-  color: #8cf2c8;
+  color: var(--green-strong);
   background: rgba(53, 240, 164, 0.05);
 }
 
