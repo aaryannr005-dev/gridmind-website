@@ -14,10 +14,10 @@ export function Logo({ compact = false }: { compact?: boolean }) {
         <rect x="3.5" y="3.5" width="25" height="25" rx="6" stroke="currentColor" strokeOpacity="0.28" />
         <path d="M9 9h14v14H9z" stroke="currentColor" strokeOpacity="0.45" strokeWidth="1.2" />
         <path d="M9 9l14 14M23 9 9 23" stroke="currentColor" strokeOpacity="0.22" strokeWidth="1" />
-        <circle cx="9" cy="9" r="2.4" fill="#35f0a4" />
-        <circle cx="23" cy="9" r="2.4" fill="#22d3ee" />
-        <circle cx="9" cy="23" r="2.4" fill="#22d3ee" />
-        <circle cx="23" cy="23" r="2.4" fill="#4b8cff" />
+        <circle cx="9" cy="9" r="2.4" fill="currentColor" fillOpacity="0.9" />
+        <circle cx="23" cy="9" r="2.4" fill="currentColor" fillOpacity="0.62" />
+        <circle cx="9" cy="23" r="2.4" fill="currentColor" fillOpacity="0.62" />
+        <circle cx="23" cy="23" r="2.4" fill="currentColor" fillOpacity="0.38" />
       </svg>
       <span className="logo-type">
         Grid<span className="logo-accent">Mind</span>
