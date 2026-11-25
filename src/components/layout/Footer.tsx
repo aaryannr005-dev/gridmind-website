@@ -51,10 +51,7 @@ export function Footer() {
             <div>
               <p className="footer-col-title">Status</p>
               <ul className="footer-status">
-                <li>
-                  <span className="status-dot" aria-hidden="true" />
-                  Simulation online
-                </li>
+                <li className="footer-muted">Simulation only</li>
                 <li className="footer-muted">No live grid connection</li>
               </ul>
             </div>
