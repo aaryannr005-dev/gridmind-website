@@ -22,7 +22,7 @@ export function Logo({ compact = false }: { compact?: boolean }) {
       <span className="logo-type">
         Grid<span className="logo-accent">Mind</span>
       </span>
-      {!compact && <span className="logo-sub">Community Energy OS</span>}
+      {!compact && <span className="logo-sub">Energy Scenario Modelling</span>}
     </span>
   );
 }
